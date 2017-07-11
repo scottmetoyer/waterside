@@ -43,6 +43,15 @@ class UcrGlobalSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('parent_name'),
     ];
 
+    $form['search_html'] = [
+      '#type' => 'textarea',
+      '#cols' => 6,
+      '#title' => $this->t('Search form HTML'),
+      '#description' => $this->t('The Google Search HTML and JavaScript snippet that creates the search form.'),
+      '#required' => TRUE,
+      '#default_value' => $config->get('search_html'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
